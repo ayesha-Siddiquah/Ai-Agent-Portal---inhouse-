@@ -1,36 +1,30 @@
-import exploreIcon from "../assets/explore.svg"; // your exported icon
+import exploreAgentsIcon from "../assets/explore-agents-button.svg";
 
-export default function ExploreAgentsButton() {
+export default function ExploreAgentsButton({ onClick }) {
   return (
     <button
+      onClick={onClick}
+      aria-label="Explore AI Agents"
       className="
-        flex items-center gap-[8px]
-        h-[48px]
-        px-[20px]
-        bg-white
-        rounded-[12px]
-        outline outline-1 outline-dashed outline-black
+        w-[221px]
+        h-[56px]
+        bg-transparent
+        p-0
+        border-0
+        appearance-none
+        cursor-pointer
+        focus:outline-none
+        hover:scale-[1.02]
+        active:scale-[0.98]
+        transition-transform
       "
     >
-      {/* Icon */}
       <img
-        src={exploreIcon}
-        alt="Explore"
-        className="w-[20px] h-[20px]"
+        src={exploreAgentsIcon}
+        alt=""
+        className="w-full h-full object-contain"
+        draggable="false"
       />
-
-      {/* Text */}
-      <span
-        className="
-          font-manrope
-          font-medium
-          text-[16px]
-          leading-[20px]
-          text-[#333333]
-        "
-      >
-        Explore Agents
-      </span>
     </button>
   );
 }

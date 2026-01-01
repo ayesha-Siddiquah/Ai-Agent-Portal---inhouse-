@@ -1,88 +1,123 @@
 import Logo from "./Logo";
 import VisitOurWebsiteButton from "./VisitOurWebsiteButton";
+import ExploreAgentsButton from "./ExploreAgentsButton";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[688px] outline outline-1 outline-black">
-      
+    <section
+      className="relative w-full h-[688px]"
+      style={{
+        background: `
+          linear-gradient(
+            135deg,
+            rgba(231,230,42,0.38) 0%,
+            rgba(112,203,207,0.38) 32%,
+            rgba(185,120,178,0.38) 62%,
+            rgba(228,99,86,0.38) 90%
+          )
+        `,
+      }}
+    >
+      {/* 🌤 soft white bloom */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.22))",
+        }}
+      />
 
-      {/* Header row */}
-      <div className="max-w-[1240px] mx-auto h-[80px] px-[24px] flex items-center justify-between outline outline-1 outline-black">
+      {/* HEADER — unchanged */}
+      <div
+        className="
+          max-w-[1240px]
+          mx-auto
+          h-[80px]
+          px-[24px]
+          flex
+          items-center
+          justify-between
+          rounded-[20px]
+          mt-[16px]
+          relative
+          z-10
+        "
+        style={{
+          background: "rgba(255,255,255,0.45)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          boxShadow: "0px 6px 20px rgba(0,0,0,0.08)",
+        }}
+      >
         <Logo />
         <VisitOurWebsiteButton />
       </div>
 
-      {/* Content frame (outline only) */}
-<div className=" w-[847px] min-h-[288px] mx-auto mt-[150px] flex flex-col items-center gap-[40px] outline outline-1 outline-black">
-
- {/*Manrope at large sizes benefits from tiny tracking. tracking - [-0.01em] is added, leading(line-height reduced from 78 to 72px)  */}
-          <h1
-    className="
-      font-manrope
-      font-bold
-      text-[64px]
-      leading-[72px] 
-      tracking - [-0.01em] 
-      text-center
-      max-w-[847px]
-    "
-  >
-    <span className="text-black">
-      Your Gateway To{" "}
-    </span>
-    <span style={{ color: "#6BCFB7" }}>
-  Agentic AI
-</span>
-  </h1>
-
-
-      {/* The subtext...Access, explore  */}
-
-
-
-
- {/* 
-          Hero Description
-          NOTE:
-          Figma gap (Title → Description) = 28px.
-          Reduced to 10px here for optical alignment due to font
-          bounding-box and line-height differences in browser.
-        */}
-
+      {/* HERO CONTENT */}
       <div
-  className="
-    w-full
-    h-[72px]
-    outline
-    mt-[10px]  
-    outline-1
-    outline-dashed
-    flex
-    items-center
-    justify-center
-    px-4
-  "
->
-  <p
-    className="
-      font-['Outfit']
-      text-[28px]
-      leading-[43px]
-      text-center
-      text-[#565656]
-      max-w-[700px]
-    "
-  >
-    Access, explore, and collaborate with powerful AI agents
-    designed for different needs
-  </p>
-</div>
+        className="
+          w-[847px]
+          mx-auto
+          mt-[120px]
+          flex
+          flex-col
+          items-center
+          text-center
+          relative
+          z-10
+        "
+      >
+        {/* TITLE */}
+        <h1
+          className="
+            font-manrope
+            font-bold
+            text-[64px]
+            leading-[78px]
+            tracking-[-0.01em]
+            mb-[18px]
+          "
+        >
+          <span className="text-[#1F1F1F]">Your Gateway To </span>
 
+          {/* Muted teal glossy text */}
+          <span
+            className="text-[#6BCFB7]"
+            style={{
+              textShadow:
+                "inset 1px 3px 4px rgba(0,0,0,0.25)",
+            }}
+          >
+            Agentic AI
+          </span>
+        </h1>
 
-        {/* <div className="w-[520px] h-[48px] outline outline-1 outline-dashed" /> */}
-        <div className="w-[180px] h-[48px] outline outline-1 outline-dashed rounded-[12px]" />
+        {/* SUBTITLE — closer to title */}
+        <p
+          className="
+            font-['Outfit']
+            text-[28px]
+            leading-[43px]
+            text-[#565656]
+            max-w-[700px]
+            mb-[28px]
+          "
+        >
+          Access, explore, and collaborate with powerful AI agents
+          designed for different needs
+        </p>
+
+        {/* CTA — moved up */}
+        <ExploreAgentsButton />
       </div>
 
+      {/* bottom separator shadow */}
+      <div
+        className="absolute bottom-0 left-0 w-full h-[1px]"
+        style={{
+          boxShadow: "0px -4px 12px rgba(0,0,0,0.18)",
+        }}
+      />
     </section>
   );
 }
