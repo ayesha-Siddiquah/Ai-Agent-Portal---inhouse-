@@ -3,43 +3,116 @@ import VisitOurWebsiteButton from "./VisitOurWebsiteButton";
 
 export default function Header() {
   return (
-    <header className="w-full absolute top-0 left-0 z-20">
+    <header className="absolute top-[24px] left-0 w-full z-30">
       <div
-        className="
-          max-w-[1240px]
-          mx-auto
-          h-[80px]
-          px-[24px]
-          mt-[16px]
-          flex
-          items-center
-          justify-between
-          rounded-[20px]
-        "
+        className="max-w-[1240px] mx-auto h-[80px] px-[24px] flex items-center justify-between rounded-[20px]"
         style={{
-          /* Glass background (reduced whitishness) */
           background: `
             linear-gradient(
               180deg,
-              rgba(255,255,255,0.40) 0%,
-              rgba(255,255,255,0.70) 50%,
-              rgba(255,255,255,0.85) 75%,
-              rgba(255,255,255,1) 100%
+              rgba(255,255,255,0.18),
+              rgba(255,255,255,0.32)
             )
           `,
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-
-          /* Subtle elevation */
-          boxShadow: "0px 6px 20px rgba(0,0,0,0.08)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          border: "1px solid rgba(255,255,255,0.9)",
+          boxShadow: `
+            0 0 0 1px rgba(255,255,255,0.35),
+            0 10px 28px rgba(0,0,0,0.10)
+          `,
         }}
       >
-        {/* Logo */}
         <Logo />
-
-        {/* CTA */}
         <VisitOurWebsiteButton />
       </div>
     </header>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

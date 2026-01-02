@@ -1,4 +1,3 @@
-
 import SparkleIcon from "../assets/sparkle.svg";
 
 export default function PrimaryActionButton({
@@ -7,12 +6,19 @@ export default function PrimaryActionButton({
   disabled = false,
 }) {
   const subtleTextStroke = {
-    textShadow: `
-      -0.25px 0 #4B371C,
-       0.25px 0 #4B371C,
-       0 0.25px #4B371C,
-       0 -0.25px #4B371C
-    `,
+    textShadow: disabled
+      ? `
+        -0.25px 0 #B5B5B5,
+         0.25px 0 #B5B5B5,
+         0 0.25px #B5B5B5,
+         0 -0.25px #B5B5B5
+      `
+      : `
+        -0.25px 0 #4B371C,
+         0.25px 0 #4B371C,
+         0 0.25px #4B371C,
+         0 -0.25px #4B371C
+      `,
   };
 
   return (
@@ -29,7 +35,7 @@ export default function PrimaryActionButton({
         transition-all duration-200
         ${
           disabled
-            ? "bg-[#F3F3F3] text-[#9A9A9A] cursor-not-allowed border border-[#E0E0E0]"
+            ? "bg-[#F3F3F3] cursor-not-allowed border border-[#E0E0E0]"
             : "border border-[#2B2B2B]/70 hover:brightness-[0.97]"
         }
       `}
@@ -39,34 +45,35 @@ export default function PrimaryActionButton({
               background: `
                 linear-gradient(
                   165deg,
-                  rgba(231,230,42,0.22) 0%,
-                  rgba(185,120,178,0.22) 32%,
-                  rgba(112,203,207,0.22) 62%,
-                  rgba(228,99,86,0.22) 90%
+                  rgba(231,230,42,0.35) 0%,
+                  rgba(185,120,178,0.35) 32%,
+                  rgba(112,203,207,0.35) 62%,
+                  rgba(228,99,86,0.35) 90%
                 )
               `,
             }
           : {}
       }
     >
-      {!disabled && (
-        <img
-          src={SparkleIcon}
-          alt=""
-          className="w-[18px] h-[18px]"
-          draggable="false"
-        />
-      )}
+      {/* Sparkle always visible */}
+      <img
+        src={SparkleIcon}
+        alt=""
+        className={`w-[18px] h-[18px] ${
+          disabled ? "opacity-70 grayscale brightness-[0.6]" : ""
+        }`}
+        draggable="false"
+      />
 
       <span
-        className="
+        className={`
           font-['Outfit']
           font-bold
           text-[18px]
           leading-[1.4]
           tracking-[0px]
-          text-[#4B371C]
-        "
+          ${disabled ? "text-[#9A9A9A]" : "text-[#4B371C]"}
+        `}
         style={subtleTextStroke}
       >
         {text}

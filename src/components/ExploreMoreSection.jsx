@@ -6,12 +6,12 @@ export default function ExploreMoreSection() {
     <section
       className="
         w-full
-        mt-[80px]
+        mt-[40px]
         relative
         bg-[#EDFEFF]
       "
     >
-      {/* Decorative SVG (shapes only) */}
+      {/* Decorative SVG (background only) */}
       <img
         src={SkyBlueBg}
         alt=""
@@ -25,7 +25,7 @@ export default function ExploreMoreSection() {
         "
       />
 
-      {/* Content */}
+      {/* Content surface */}
       <div
         className="
           relative
@@ -39,20 +39,21 @@ export default function ExploreMoreSection() {
           flex-col
           items-center
           text-center
+
+          bg-white
+          rounded-[24px]
+          isolation-isolate
         "
       >
-        {/* Title */}
         <h3 className="font-manrope font-bold text-[36px] text-[#4B371C]">
           Explore More With Inflecto
         </h3>
 
-        {/* Subtitle — moved closer */}
         <p className="mt-[6px] max-w-[640px] text-[16px] text-[#6B6B6B] leading-[150%]">
           Discover our full range of solutions, insights, and resources on our
           official website.
         </p>
 
-        {/* Button */}
         <div className="mt-[16px]">
           <VisitOurWebsiteButton />
         </div>

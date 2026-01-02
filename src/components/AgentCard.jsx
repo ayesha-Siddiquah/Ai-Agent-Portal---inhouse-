@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import PrimaryActionButton from "./PrimaryActionButton";
 
@@ -12,9 +11,11 @@ export default function AgentCard({ agent, tagStyles }) {
     const el = textRef.current;
     if (!el) return;
 
-    if (el.scrollHeight > el.clientHeight) {
-      setShowToggle(true);
-    }
+    requestAnimationFrame(() => {
+      if (el.scrollHeight > el.clientHeight) {
+        setShowToggle(true);
+      }
+    });
   }, []);
 
   return (
@@ -31,12 +32,15 @@ export default function AgentCard({ agent, tagStyles }) {
         pt-[10px]
         px-[24px]
         pb-[24px]
+        shadow-[0_4px_16px_rgba(0,0,0,0.06)]
       "
     >
-      <h3 className="font-manrope font-semibold text-[20px] text-[#252525] mb-[4px]">
+      {/* TITLE */}
+      <h3 className="font-manrope font-semibold text-[20px] text-[#252525] mb-[8px]">
         {agent.title}
       </h3>
 
+      {/* TAGS */}
       <div className="flex flex-wrap gap-[8px] mb-[12px]">
         {agent.tags.map((tag, i) => (
           <span
@@ -48,6 +52,7 @@ export default function AgentCard({ agent, tagStyles }) {
         ))}
       </div>
 
+      {/* DESCRIPTION */}
       <p
         ref={textRef}
         className={`font-outfit text-[16px] leading-[155%] text-[#565656] ${
@@ -57,15 +62,17 @@ export default function AgentCard({ agent, tagStyles }) {
         {agent.description}
       </p>
 
+      {/* READ MORE / LESS */}
       {showToggle && (
-        <button
+        <span
           onClick={() => setExpanded(!expanded)}
-          className="mt-[6px] text-[14px] underline text-[#6B6B6B] hover:text-[#4B371C] self-start"
+          className="mt-[2px] text-[14px] text-[#E5533D] cursor-pointer self-start"
         >
-          {expanded ? "Read less" : "Read more"}
-        </button>
+          {expanded ? "Read Less..." : "Read More..."}
+        </span>
       )}
 
+      {/* BUTTON */}
       <div className="mt-auto pt-[16px]">
         <PrimaryActionButton
           text={agent.button}
