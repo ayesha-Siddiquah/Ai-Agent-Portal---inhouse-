@@ -8,12 +8,17 @@ const labelStyle = {
 export default function AgentOnboardingPanel() {
   return (
     <div className="min-h-screen w-full">
-      <div className="flex flex-col items-center pt-[64px]">
+      {/* 
+        IMPORTANT:
+        - pt controls top spacing
+        - pb controls bottom breathing space (fixes laptop vs monitor issue)
+      */}
+      <div className="flex flex-col items-center pt-[64px] pb-[96px]">
 
-        {/* Logo */}
+        {/* ================= LOGO ================= */}
         <Logo />
 
-        {/* Title + Subtitle */}
+        {/* ================= TITLE + SUBTITLE ================= */}
         <div className="mt-[32px] flex flex-col items-center gap-[12px]">
           <h1 className="font-manrope text-[36px] font-bold text-[#4B371C] text-center">
             Agent Onboarding Panel
@@ -31,50 +36,142 @@ export default function AgentOnboardingPanel() {
 
               {/* Name of Agent */}
               <div className="flex flex-col gap-[6px]">
-                <label className="font-outfit text-[16px] text-[#4A4A4A]" style={labelStyle}>
+                <label
+                  className="font-outfit text-[16px] text-[#4A4A4A]"
+                  style={labelStyle}
+                >
                   Name of Agent
                 </label>
-                <input className="h-[44px] w-full rounded-[8px] border border-[#CACACA] bg-white px-[16px] outline-none" />
+                <input
+                  className="
+                    h-[44px]
+                    w-full
+                    rounded-[8px]
+                    border
+                    border-[#CACACA]
+                    bg-white
+                    px-[16px]
+                    outline-none
+                  "
+                />
               </div>
 
               {/* TechStack */}
               <div className="flex flex-col gap-[6px]">
-                <label className="font-outfit text-[16px] text-[#4A4A4A]" style={labelStyle}>
+                <label
+                  className="font-outfit text-[16px] text-[#4A4A4A]"
+                  style={labelStyle}
+                >
                   TechStack
                 </label>
-                <input className="h-[44px] w-full rounded-[8px] border border-[#CACACA] bg-white px-[16px] outline-none" />
+                <input
+                  className="
+                    h-[44px]
+                    w-full
+                    rounded-[8px]
+                    border
+                    border-[#CACACA]
+                    bg-white
+                    px-[16px]
+                    outline-none
+                  "
+                />
               </div>
 
               {/* Link (Optional) */}
               <div className="flex flex-col gap-[6px]">
-                <label className="font-outfit text-[16px] text-[#4A4A4A]" style={labelStyle}>
+                <label
+                  className="font-outfit text-[16px] text-[#4A4A4A]"
+                  style={labelStyle}
+                >
                   Link (Optional)
                 </label>
-                <input className="h-[44px] w-full rounded-[8px] border border-[#CACACA] bg-white px-[16px] outline-none" />
+                <input
+                  className="
+                    h-[44px]
+                    w-full
+                    rounded-[8px]
+                    border
+                    border-[#CACACA]
+                    bg-white
+                    px-[16px]
+                    outline-none
+                  "
+                />
               </div>
 
               {/* Demo Video URL */}
               <div className="flex flex-col gap-[6px]">
-                <label className="font-outfit text-[16px] text-[#4A4A4A]" style={labelStyle}>
+                <label
+                  className="font-outfit text-[16px] text-[#4A4A4A]"
+                  style={labelStyle}
+                >
                   Demo Video URL
                 </label>
-                <input className="h-[44px] w-full rounded-[8px] border border-[#CACACA] bg-white px-[16px] outline-none" />
+                <input
+                  className="
+                    h-[44px]
+                    w-full
+                    rounded-[8px]
+                    border
+                    border-[#CACACA]
+                    bg-white
+                    px-[16px]
+                    outline-none
+                  "
+                />
               </div>
 
               {/* Description */}
               <div className="flex flex-col gap-[6px]">
-                <label className="font-outfit text-[16px] text-[#4A4A4A]" style={labelStyle}>
+                <label
+                  className="font-outfit text-[16px] text-[#4A4A4A]"
+                  style={labelStyle}
+                >
                   Description
                 </label>
-                <textarea className="w-full min-h-[120px] max-h-[220px] resize-none overflow-y-auto rounded-[8px] border border-[#CACACA] bg-white px-[16px] py-[12px] outline-none" />
+                <textarea
+                  className="
+                    w-full
+                    min-h-[120px]
+                    max-h-[220px]
+                    resize-none
+                    overflow-y-auto
+                    rounded-[8px]
+                    border
+                    border-[#CACACA]
+                    bg-white
+                    px-[16px]
+                    py-[12px]
+                    outline-none
+                  "
+                />
               </div>
 
               {/* Capability */}
               <div className="flex flex-col gap-[6px]">
-                <label className="font-outfit text-[16px] text-[#4A4A4A]" style={labelStyle}>
+                <label
+                  className="font-outfit text-[16px] text-[#4A4A4A]"
+                  style={labelStyle}
+                >
                   Capability
                 </label>
-                <textarea className="w-full min-h-[120px] max-h-[220px] resize-none overflow-y-auto rounded-[8px] border border-[#CACACA] bg-white px-[16px] py-[12px] outline-none" />
+                <textarea
+                  className="
+                    w-full
+                    min-h-[120px]
+                    max-h-[220px]
+                    resize-none
+                    overflow-y-auto
+                    rounded-[8px]
+                    border
+                    border-[#CACACA]
+                    bg-white
+                    px-[16px]
+                    py-[12px]
+                    outline-none
+                  "
+                />
               </div>
 
             </div>

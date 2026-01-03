@@ -5,6 +5,7 @@ import DashboardIcon from "../assets/dashboard-sidebar-icon.svg";
 import AgentsIcon from "../assets/Robo-agents-sidebar-icon.svg";
 import NotificationIcon from "../assets/notification-sidebar-icon.svg";
 import SettingsIcon from "../assets/settings-sidebar-icon.svg";
+import Doodle from "../assets/doodle.svg";
 
 export default function Sidebar() {
   return (
@@ -12,7 +13,7 @@ export default function Sidebar() {
       
       {/* TOP SECTION */}
       <div>
-        {/* Logo (Figma exact placement) */}
+        {/* Logo */}
         <div className="pt-[28px] pl-[28px]">
           <img
             src={InflectoLogo}
@@ -28,19 +29,16 @@ export default function Sidebar() {
             label="Dashboard"
             icon={DashboardIcon}
           />
-
           <SidebarItem
             to="/agents"
             label="Agents"
             icon={AgentsIcon}
           />
-
           <SidebarItem
             to="/notifications"
             label="Notifications"
             icon={NotificationIcon}
           />
-
           <SidebarItem
             to="/settings"
             label="Settings"
@@ -49,8 +47,17 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      {/* BOTTOM USER */}
-      <div className="pl-[28px] pb-[24px]">
+      {/* BOTTOM SECTION */}
+      <div className="pl-[28px] pb-[24px] flex flex-col gap-[16px]">
+        
+        {/* Doodle Illustration */}
+        <img
+          src={Doodle}
+          alt="Sidebar doodle"
+          className="w-[162px] h-[162px]"
+        />
+
+        {/* Admin Info */}
         <div className="flex items-center gap-[12px]">
           <div className="w-[36px] h-[36px] rounded-full bg-[#EDEDED]" />
           <div>
@@ -62,17 +69,21 @@ export default function Sidebar() {
             </p>
           </div>
         </div>
+
       </div>
     </aside>
   );
 }
 
 /* ------------------------------------
-   Sidebar Item (Figma exact)
+   Sidebar Item (NO UNDERLINE)
 ------------------------------------ */
 function SidebarItem({ to, label, icon }) {
   return (
-    <NavLink to={to}>
+    <NavLink
+      to={to}
+      className="no-underline hover:no-underline"
+    >
       {({ isActive }) => (
         <div
           className={`
