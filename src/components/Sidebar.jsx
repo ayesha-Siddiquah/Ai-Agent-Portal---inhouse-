@@ -9,8 +9,12 @@ import Doodle from "../assets/doodle.svg";
 
 export default function Sidebar() {
   return (
-    <aside className="w-[218px] h-screen bg-white flex flex-col justify-between">
-      
+    <aside
+      // Inline background is intentional:
+      // Tailwind bg utilities are overridden by higher-specificity CSS
+      style={{ backgroundColor: "#FFFFFF" }}
+      className="w-[218px] h-screen flex flex-col justify-between"
+    >
       {/* TOP SECTION */}
       <div>
         {/* Logo */}
@@ -24,32 +28,19 @@ export default function Sidebar() {
 
         {/* Navigation */}
         <nav className="mt-[32px] flex flex-col gap-[16px] pl-[28px]">
-          <SidebarItem
-            to="/dashboard"
-            label="Dashboard"
-            icon={DashboardIcon}
-          />
-          <SidebarItem
-            to="/agents"
-            label="Agents"
-            icon={AgentsIcon}
-          />
+          <SidebarItem to="/dashboard" label="Dashboard" icon={DashboardIcon} />
+          <SidebarItem to="/agents" label="Agents" icon={AgentsIcon} />
           <SidebarItem
             to="/notifications"
             label="Notifications"
             icon={NotificationIcon}
           />
-          <SidebarItem
-            to="/settings"
-            label="Settings"
-            icon={SettingsIcon}
-          />
+          <SidebarItem to="/settings" label="Settings" icon={SettingsIcon} />
         </nav>
       </div>
 
       {/* BOTTOM SECTION */}
       <div className="pl-[28px] pb-[24px] flex flex-col gap-[16px]">
-        
         {/* Doodle Illustration */}
         <img
           src={Doodle}
@@ -69,21 +60,17 @@ export default function Sidebar() {
             </p>
           </div>
         </div>
-
       </div>
     </aside>
   );
 }
 
 /* ------------------------------------
-   Sidebar Item (NO UNDERLINE)
+   Sidebar Item
 ------------------------------------ */
 function SidebarItem({ to, label, icon }) {
   return (
-    <NavLink
-      to={to}
-      className="no-underline hover:no-underline"
-    >
+    <NavLink to={to} className="no-underline hover:no-underline">
       {({ isActive }) => (
         <div
           className={`
@@ -96,11 +83,7 @@ function SidebarItem({ to, label, icon }) {
           `}
         >
           <div className="flex items-center gap-[12px] h-[22px]">
-            <img
-              src={icon}
-              alt={label}
-              className="w-[18px] h-[18px]"
-            />
+            <img src={icon} alt={label} className="w-[18px] h-[18px]" />
             <span
               className={`
                 text-[14px] font-medium
