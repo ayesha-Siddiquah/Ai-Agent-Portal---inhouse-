@@ -9,7 +9,8 @@ export default function MainLayout() {
       <Sidebar />
 
       {/* Right */}
-      <div className="flex-1">
+      {/* <div className="flex-1"> */}
+        <div className="flex-1 overflow-hidden">
         <Outlet />
       </div>
     </div>
