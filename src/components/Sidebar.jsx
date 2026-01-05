@@ -28,10 +28,10 @@ export default function Sidebar() {
 
         {/* Navigation */}
         <nav className="mt-[32px] flex flex-col gap-[16px] pl-[28px]">
-          <SidebarItem to="/dashboard" label="Dashboard" icon={DashboardIcon} />
-          <SidebarItem to="/agents" label="Agents" icon={AgentsIcon} />
+          <SidebarItem to="/app/dashboard" label="Dashboard" icon={DashboardIcon} />
+          <SidebarItem to="/app/agents" label="Agents" icon={AgentsIcon} />
           <SidebarItem
-            to="/notifications"
+            to="/app/notifications"
             label="Notifications"
             icon={NotificationIcon}
           />
